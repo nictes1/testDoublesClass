@@ -1,6 +1,10 @@
 package calculadora
 
-import "testing"
+import (
+	"testing"
+
+	"github.com/go-playground/assert/v2"
+)
 
 // se crea un un struct dummyLogger
 type dummyLogger struct{}
@@ -20,5 +24,5 @@ func TestSumar(t *testing.T) {
 	// Se ejecuta el test
 	resultado := Sumar(num1, num2, myDummy)
 	// Se validan los resultados aprovechando testify
-	assert.Equal(t, resultadoEsperado, resultado, "deben ser iguales")
+	assert.Equal(t, resultadoEsperado, resultado)
 }
